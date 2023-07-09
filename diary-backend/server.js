@@ -2,6 +2,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import config from './db/config.js'
 import postRoutes from './routes/posts.js'
+import cors from 'cors'
 
 // create the express app
 const app = express()
@@ -10,6 +11,7 @@ const app = express()
 const PORT = 8000
 
 // middleware
+app.use(cors({ origin: true, credentials: true }))
 app.use(express.json())
 
 // routes
