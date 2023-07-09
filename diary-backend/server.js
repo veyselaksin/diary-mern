@@ -9,7 +9,10 @@ const app = express()
 // set up the dynamic port
 const PORT = 8000
 
-// add urls to the app
+// middleware
+app.use(express.json())
+
+// routes
 app.use('/api/posts', postRoutes)
 
 // connect to the database
